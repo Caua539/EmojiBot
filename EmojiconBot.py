@@ -35,7 +35,7 @@ def start_command(bot, update):
                                                  'Digite /help para entender meu funcionamento.\n\n'
                                                  'Feito por Cauã M. Pessoa\n'
                                                  'Github: https://github.com/Caua539/EmojiconBot\n'
-                                                 '(for english, /starten)')
+                                                 '(for english, /starten)', ,True)
                       
                                                  
 def starten_command(bot, update):
@@ -44,7 +44,7 @@ def starten_command(bot, update):
                                                  'find the best emojicon to express yourself in chat!\n'
                                                  'Type /help to understand how I work.\n\n'
                                                  'Author: Cauã M. Pessoa\n'
-                                                 'Github: https://github.com/Caua539/EmojiconBot')
+                                                 'Github: https://github.com/Caua539/EmojiconBot', ,True)
               
                                                 
 def help_command(bot, update):
