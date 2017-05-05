@@ -30,7 +30,7 @@ with open('config.json') as config_file:
 #handlers
 def start_command(bot, update):
     """ Responde ao comando /start """
-    bot.sendMessage(update.message.chat_id, text='Olá, sou o EmojiconBot! Minha função é te ajudar a' 
+    bot.sendMessage(update.message.chat_id, text='Olá, sou o EmojiconBot! Minha função é te ajudar a ' 
                                                  'encontrar o melhor emojicon para você se expressar nos chats!\n'
                                                  'Digite /help para entender meu funcionamento.\n\n'
                                                  'Feito por Cauã M. Pessoa\n'
@@ -40,7 +40,7 @@ def start_command(bot, update):
                                                  
 def starten_command(bot, update):
     """ Handle the /starten command """
-    bot.sendMessage(update.message.chat_id, text='Hello, I\'m emojiconbot! I\'m here to help you' 
+    bot.sendMessage(update.message.chat_id, text='Hello, I\'m emojiconbot! I\'m here to help you ' 
                                                  'find the best emojicon to express yourself in chat!\n'
                                                  'Type /help to understand how I work.\n\n'
                                                  'Author: Cauã M. Pessoa\n'
@@ -49,21 +49,21 @@ def starten_command(bot, update):
                                                 
 def help_command(bot, update):
     """ Responde ao comando /help """
-    bot.sendMessage(update.message.chat_id, text='Eu sou um bot inline, isso significa que posso ser chamado'
-                                                 'diretamente do chat, assim como @gif. Digite \'@Emojicon_Bot NOME DO EMOJICON\''
+    bot.sendMessage(update.message.chat_id, text='Eu sou um bot inline, isso significa que posso ser chamado '
+                                                 'diretamente do chat, assim como @gif. Digite \'@Emojicon_Bot NOME DO EMOJICON\' '
                                                  'em qualquer chat para que eu busque um emojicon dos que tenho cadastrado.\n\n'
-                                                 'Para adicionar um novo emojicon no meu repositório, utilize o comando'
+                                                 'Para adicionar um novo emojicon no meu repositório, utilize o comando '
                                                  '/addemojicon NESSE chat comigo e siga as instruções.\n'
                                                  '(for english, /helpen)')
     
     
 def helpen_command(bot, update):
     """ Handle the /helpen command """
-    bot.sendMessage(update.message.chat_id, text='I\'m an inline bot, which means I can be called directly from'
-                                                 'chat, just like @gif. Type \'@Emojicon_Bot EMOJICON NAME\''
-                                                 'in any chat so that I can look for emojicons from the ones I have'
+    bot.sendMessage(update.message.chat_id, text='I\'m an inline bot, which means I can be called directly from '
+                                                 'chat, just like @gif. Type \'@Emojicon_Bot EMOJICON NAME\' '
+                                                 'in any chat so that I can look for emojicons from the ones I have '
                                                  'stored.\n\n'
-                                                 'To add a new emojicon to my repository, use the /addemojicon'
+                                                 'To add a new emojicon to my repository, use the /addemojicon '
                                                  'command in THIS chat and follow the instructions.\n')
     
     
