@@ -30,32 +30,48 @@ with open('config.json') as config_file:
 #handlers
 def start_command(bot, update):
     """ Responde ao comando /start """
-    bot.sendMessage(update.message.chat_id, text='pt-br (for english, /starten): Olá, sou o EmojiconBot! Minha função é te ajudar a ' 
+    bot.sendMessage(update.message.chat_id, text='Olá, sou o EmojiconBot! Minha função é te ajudar a' 
                                                  'encontrar o melhor emojicon para você se expressar nos chats!\n'
-                                                 'Digite /help para entender meu funcionamento.\n')
+                                                 'Digite /help para entender meu funcionamento.\n\n'
+                                                 'Feito por Cauã M. Pessoa\n'
+                                                 'Github: https://github.com/Caua539/EmojiconBot\n'
+                                                 '(for english, /starten)')
                       
                                                  
 def starten_command(bot, update):
     """ Handle the /starten command """
-    bot.sendMessage(update.message.chat_id, text='en: Hello, I\'m emojiconbot! I\'m here to help you ' 
+    bot.sendMessage(update.message.chat_id, text='Hello, I\'m emojiconbot! I\'m here to help you' 
                                                  'find the best emojicon to express yourself in chat!\n'
-                                                 'Type /help to understand how I work.\n')
+                                                 'Type /help to understand how I work.\n\n'
+                                                 'Author: Cauã M. Pessoa\n'
+                                                 'Github: https://github.com/Caua539/EmojiconBot')
               
                                                 
 def help_command(bot, update):
     """ Responde ao comando /help """
-    bot.sendMessage(update.message.chat_id, text='pt-br (for english, /helpen):')
+    bot.sendMessage(update.message.chat_id, text='Eu sou um bot inline, isso significa que posso ser chamado'
+                                                 'diretamente do chat, assim como @gif. Digite \'@Emojicon_Bot NOME DO EMOJICON\''
+                                                 'em qualquer chat para que eu busque um emojicon dos que tenho cadastrado.\n\n'
+                                                 'Para adicionar um novo emojicon no meu repositório, utilize o comando'
+                                                 '/addemojicon NESSE chat comigo e siga as instruções.\n'
+                                                 '(for english, /helpen)')
     
     
 def helpen_command(bot, update):
     """ Handle the /helpen command """
-    bot.sendMessage(update.message.chat_id, text='en:')
+    bot.sendMessage(update.message.chat_id, text='I\'m an inline bot, which means I can be called directly from'
+                                                 'chat, just like @gif. Type \'@Emojicon_Bot EMOJICON NAME\''
+                                                 'in any chat so that I can look for emojicons from the ones I have'
+                                                 'stored.\n\n'
+                                                 'To add a new emojicon to my repository, use the /addemojicon'
+                                                 'command in THIS chat and follow the instructions.\n')
     
     
 EMOJICONNAME, EMOJICON = range(2)
 
 def addemojicon_command(bot, update):
-    update.message.reply_text('Para começar, me mande o nome do emojicon que deseja adicionar (para poder buscá-lo).')
+    update.message.reply_text('Para começar, me mande o nome do emojicon que deseja adicionar (para poder buscá-lo).\n'
+                              '((To begin, send me the name of the emojicon you wish to add (so I can look for it later))).')
     
     return EMOJICONNAME
 
@@ -65,7 +81,8 @@ def emojiconname_command(bot, update):
     logger.info("Emojicon Name sent by %s: %s" % (user.first_name, update.message.text))
     global emojiconname
     emojiconname = update.message.text
-    update.message.reply_text('Certo, agora mande o emojicon (em texto):')
+    update.message.reply_text('Certo, agora mande o emojicon (em texto):\n'
+                              '((Right, now send me the emojicon (in text format):))')
     
     return EMOJICON
     
@@ -75,7 +92,8 @@ def newemojicon_command(bot, update):
     logger.info("Emojicon sent by %s: %s" % (user.first_name, update.message.text))
     global emojicon
     emojicon = update.message.text
-    update.message.reply_text('Emojicon adicionado a lista! Obrigado!')
+    update.message.reply_text('Emojicon adicionado a lista! Obrigado!\n'
+                              '((Emojicon added to the list! Thanks!))')
     EmojiconFinder.newemojicon(emojiconname, emojicon, RESPONSE_DICT)
     
     return ConversationHandler.END
